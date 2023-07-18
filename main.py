@@ -16,10 +16,11 @@ pipe = pickle.load(open(model_file_path, 'rb'))
 def index():
     
     mainroads = sorted(data['mainroad'].unique())
-    return render_template('index.html', mainroads=mainroads)
+    return render_template('/index.html', mainroads=mainroads)
 
 @app.route('/predict' , methods=['POST'])
 def predict():
+    print("i'm in predict")
     if request.method == 'POST':
         stry = request.form.get('stories')
         ar = request.form.get('area')
@@ -29,7 +30,7 @@ def predict():
         furnishingstat = request.form.get('furnishingstatus')
         
         print(stry,ar,bds,bth,mainrd,furnishingstat)
-        input = pd.DataFrame([[stry, ar,bds,bth,mainrd,furnishingstat]],columns=['stry','ar','bds','bth','mainrd','furnishingstat'])
+        input = pd.DataFrame([[stry, ar,bds,bth,mainrd,furnishingstat]],columns=['stories','area','bedrooms','bathrooms','mainroad','furnishingstatus'])
         prediction = pipe.predict(input)[0]
         
         
