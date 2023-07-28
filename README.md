@@ -1,3 +1,2 @@
 # HousePricePrediction
-House Price Prediction
-**HOw toma eke**
+***House Price Prediction Model***
