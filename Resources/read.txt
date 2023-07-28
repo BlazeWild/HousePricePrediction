@@ -1,1 +1,3 @@
-
+This is my first House Price Prediction Model Using Linear Regression Model.
+The data set is taken from kaggle. 
+The dataset "Housing.csv" is provided inside the Resources folder
